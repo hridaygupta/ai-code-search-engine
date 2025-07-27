@@ -1,0 +1,469 @@
+# Language-specific configurations for the Contextual Code Search Engine
+
+languages:
+  python:
+    name: "Python"
+    extensions: [".py", ".pyx", ".pyi", ".pyw"]
+    parser: "python"
+    keywords:
+      - "def"
+      - "class"
+      - "import"
+      - "from"
+      - "if"
+      - "for"
+      - "while"
+      - "try"
+      - "except"
+      - "with"
+      - "async"
+      - "await"
+      - "yield"
+      - "return"
+      - "pass"
+      - "break"
+      - "continue"
+      - "raise"
+      - "assert"
+      - "lambda"
+    complexity_threshold: 10
+    comment_patterns:
+      - "#.*"
+      - '"""[\s\S]*?"""'
+      - "'''[\s\S]*?'''"
+    string_patterns:
+      - '"[^"]*"'
+      - "'[^']*'"
+      - '"""[\s\S]*?"""'
+      - "'''[\s\S]*?'''"
+    function_patterns:
+      - "def\\s+\\w+\\s*\\("
+      - "async\\s+def\\s+\\w+\\s*\\("
+    class_patterns:
+      - "class\\s+\\w+"
+    import_patterns:
+      - "import\\s+\\w+"
+      - "from\\s+\\w+\\s+import"
+
+  javascript:
+    name: "JavaScript"
+    extensions: [".js", ".jsx", ".mjs"]
+    parser: "javascript"
+    keywords:
+      - "function"
+      - "const"
+      - "let"
+      - "var"
+      - "if"
+      - "for"
+      - "while"
+      - "try"
+      - "catch"
+      - "async"
+      - "await"
+      - "yield"
+      - "return"
+      - "break"
+      - "continue"
+      - "throw"
+      - "switch"
+      - "case"
+      - "default"
+      - "class"
+      - "extends"
+      - "super"
+      - "new"
+      - "delete"
+      - "typeof"
+      - "instanceof"
+    complexity_threshold: 8
+    comment_patterns:
+      - "//.*"
+      - "/\\*[\\s\\S]*?\\*/"
+    string_patterns:
+      - '"[^"]*"'
+      - "'[^']*'"
+      - "`[^`]*`"
+    function_patterns:
+      - "function\\s+\\w+\\s*\\("
+      - "const\\s+\\w+\\s*=\\s*\\([^)]*\\)\\s*=>"
+      - "let\\s+\\w+\\s*=\\s*\\([^)]*\\)\\s*=>"
+      - "var\\s+\\w+\\s*=\\s*\\([^)]*\\)\\s*=>"
+    class_patterns:
+      - "class\\s+\\w+"
+    import_patterns:
+      - "import\\s+.*\\s+from"
+      - "const\\s+\\w+\\s*=\\s*require\\("
+
+  typescript:
+    name: "TypeScript"
+    extensions: [".ts", ".tsx"]
+    parser: "typescript"
+    keywords:
+      - "function"
+      - "const"
+      - "let"
+      - "var"
+      - "interface"
+      - "type"
+      - "class"
+      - "enum"
+      - "namespace"
+      - "module"
+      - "export"
+      - "import"
+      - "public"
+      - "private"
+      - "protected"
+      - "static"
+      - "abstract"
+      - "implements"
+      - "extends"
+      - "implements"
+    complexity_threshold: 8
+    comment_patterns:
+      - "//.*"
+      - "/\\*[\\s\\S]*?\\*/"
+    string_patterns:
+      - '"[^"]*"'
+      - "'[^']*'"
+      - "`[^`]*`"
+    function_patterns:
+      - "function\\s+\\w+\\s*\\("
+      - "const\\s+\\w+\\s*:\\s*\\w+\\s*=\\s*\\([^)]*\\)\\s*=>"
+    class_patterns:
+      - "class\\s+\\w+"
+      - "interface\\s+\\w+"
+      - "type\\s+\\w+"
+    import_patterns:
+      - "import\\s+.*\\s+from"
+      - "export\\s+.*\\s+from"
+
+  java:
+    name: "Java"
+    extensions: [".java"]
+    parser: "java"
+    keywords:
+      - "public"
+      - "private"
+      - "protected"
+      - "class"
+      - "interface"
+      - "enum"
+      - "abstract"
+      - "final"
+      - "static"
+      - "synchronized"
+      - "volatile"
+      - "transient"
+      - "native"
+      - "strictfp"
+      - "package"
+      - "import"
+      - "extends"
+      - "implements"
+      - "throws"
+      - "throw"
+      - "try"
+      - "catch"
+      - "finally"
+      - "if"
+      - "else"
+      - "switch"
+      - "case"
+      - "default"
+      - "for"
+      - "while"
+      - "do"
+      - "break"
+      - "continue"
+      - "return"
+    complexity_threshold: 12
+    comment_patterns:
+      - "//.*"
+      - "/\\*[\\s\\S]*?\\*/"
+      - "/\\*\\*[\\s\\S]*?\\*/"
+    string_patterns:
+      - '"[^"]*"'
+    function_patterns:
+      - "(public|private|protected|static|final|native|synchronized|abstract|transient|volatile|strictfp)\\s+\\w+\\s+\\w+\\s*\\("
+    class_patterns:
+      - "class\\s+\\w+"
+      - "interface\\s+\\w+"
+      - "enum\\s+\\w+"
+    import_patterns:
+      - "import\\s+\\w+(\\.\\w+)*"
+      - "package\\s+\\w+(\\.\\w+)*"
+
+  cpp:
+    name: "C++"
+    extensions: [".cpp", ".cc", ".cxx", ".hpp", ".h", ".hxx"]
+    parser: "cpp"
+    keywords:
+      - "class"
+      - "struct"
+      - "union"
+      - "enum"
+      - "template"
+      - "typename"
+      - "namespace"
+      - "using"
+      - "typedef"
+      - "public"
+      - "private"
+      - "protected"
+      - "virtual"
+      - "override"
+      - "final"
+      - "static"
+      - "const"
+      - "volatile"
+      - "mutable"
+      - "explicit"
+      - "inline"
+      - "friend"
+      - "operator"
+      - "new"
+      - "delete"
+      - "this"
+      - "super"
+      - "auto"
+      - "decltype"
+      - "nullptr"
+    complexity_threshold: 15
+    comment_patterns:
+      - "//.*"
+      - "/\\*[\\s\\S]*?\\*/"
+    string_patterns:
+      - '"[^"]*"'
+      - "L\"[^\"]*\""
+      - "u8\"[^\"]*\""
+      - "u\"[^\"]*\""
+      - "U\"[^\"]*\""
+    function_patterns:
+      - "\\w+\\s+\\w+\\s*\\("
+      - "template\\s*<[^>]*>\\s*\\w+\\s+\\w+\\s*\\("
+    class_patterns:
+      - "class\\s+\\w+"
+      - "struct\\s+\\w+"
+      - "union\\s+\\w+"
+      - "enum\\s+\\w+"
+    import_patterns:
+      - "#include\\s*<[^>]*>"
+      - "#include\\s*\"[^\"]*\""
+
+  go:
+    name: "Go"
+    extensions: [".go"]
+    parser: "go"
+    keywords:
+      - "func"
+      - "type"
+      - "struct"
+      - "interface"
+      - "package"
+      - "import"
+      - "const"
+      - "var"
+      - "map"
+      - "chan"
+      - "select"
+      - "case"
+      - "default"
+      - "defer"
+      - "go"
+      - "range"
+      - "if"
+      - "else"
+      - "for"
+      - "switch"
+      - "break"
+      - "continue"
+      - "return"
+      - "fallthrough"
+      - "goto"
+    complexity_threshold: 10
+    comment_patterns:
+      - "//.*"
+      - "/\\*[\\s\\S]*?\\*/"
+    string_patterns:
+      - '"[^"]*"'
+      - "`[^`]*`"
+    function_patterns:
+      - "func\\s+\\w+\\s*\\("
+      - "func\\s*\\([^)]*\\)\\s+\\w+\\s*\\("
+    class_patterns:
+      - "type\\s+\\w+\\s+struct"
+      - "type\\s+\\w+\\s+interface"
+    import_patterns:
+      - "import\\s+\\("
+      - "import\\s+\\w+"
+
+  rust:
+    name: "Rust"
+    extensions: [".rs"]
+    parser: "rust"
+    keywords:
+      - "fn"
+      - "struct"
+      - "enum"
+      - "impl"
+      - "trait"
+      - "mod"
+      - "use"
+      - "pub"
+      - "priv"
+      - "const"
+      - "static"
+      - "let"
+      - "mut"
+      - "ref"
+      - "move"
+      - "as"
+      - "where"
+      - "for"
+      - "in"
+      - "if"
+      - "else"
+      - "match"
+      - "loop"
+      - "while"
+      - "break"
+      - "continue"
+      - "return"
+      - "unsafe"
+      - "extern"
+      - "crate"
+      - "super"
+      - "self"
+      - "Self"
+    complexity_threshold: 12
+    comment_patterns:
+      - "//.*"
+      - "/\\*[\\s\\S]*?\\*/"
+      - "///.*"
+      - "//!.*"
+    string_patterns:
+      - '"[^"]*"'
+      - "r#\"[^#]*\"#"
+    function_patterns:
+      - "fn\\s+\\w+\\s*\\("
+      - "impl\\s+\\w+\\s*\\{"
+    class_patterns:
+      - "struct\\s+\\w+"
+      - "enum\\s+\\w+"
+      - "trait\\s+\\w+"
+    import_patterns:
+      - "use\\s+\\w+"
+      - "extern\\s+crate\\s+\\w+"
+
+# Common patterns across languages
+common:
+  whitespace_patterns:
+    - "\\s+"
+    - "\\t+"
+    - "\\n+"
+  
+  number_patterns:
+    - "\\b\\d+\\.\\d+\\b"
+    - "\\b\\d+\\b"
+    - "\\b0x[0-9a-fA-F]+\\b"
+    - "\\b0b[01]+\\b"
+  
+  identifier_patterns:
+    - "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+  
+  operator_patterns:
+    - "\\+\\+"
+    - "--"
+    - "=="
+    - "!="
+    - "<="
+    - ">="
+    - "&&"
+    - "\\|\\|"
+    - "->"
+    - "=>"
+    - "\\+"
+    - "-"
+    - "\\*"
+    - "/"
+    - "%"
+    - "="
+    - "<"
+    - ">"
+    - "!"
+    - "&"
+    - "\\|"
+    - "^"
+    - "~"
+    - "\\?"
+    - ":"
+    - ";"
+    - ","
+    - "\\."
+    - "\\("
+    - "\\)"
+    - "\\["
+    - "\\]"
+    - "\\{"
+    - "\\}"
+
+# Search configuration
+search:
+  max_results: 100
+  similarity_threshold: 0.7
+  keyword_boost: 1.5
+  semantic_boost: 2.0
+  quality_boost: 1.2
+  recency_boost: 1.1
+  
+  filters:
+    language: true
+    repository: true
+    file_type: true
+    complexity: true
+    date_range: true
+    stars: true
+    forks: true
+    
+  ranking_factors:
+    semantic_similarity: 0.4
+    keyword_match: 0.2
+    code_quality: 0.15
+    popularity: 0.1
+    recency: 0.1
+    documentation: 0.05
+
+# Indexing configuration
+indexing:
+  batch_size: 100
+  max_file_size: 10485760  # 10MB
+  max_workers: 4
+  chunk_size: 1000
+  
+  exclude_patterns:
+    - "*.pyc"
+    - "*.pyo"
+    - "*.pyd"
+    - "__pycache__"
+    - "*.so"
+    - "*.dll"
+    - "*.dylib"
+    - "*.exe"
+    - "node_modules"
+    - ".git"
+    - ".svn"
+    - ".hg"
+    - "*.log"
+    - "*.tmp"
+    - "*.temp"
+    - ".DS_Store"
+    - "Thumbs.db"
+    - "*.min.js"
+    - "*.min.css"
+    - "dist"
+    - "build"
+    - "target"
+    - "bin"
+    - "obj" 
